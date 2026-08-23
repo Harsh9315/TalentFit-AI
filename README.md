@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# TalentFit AI 🚀
+> **A Scalable Full-Stack Framework for Real-Time ATS Resume Screening and HR Analytics**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+TalentFit AI is an enterprise-grade recruiting platform designed to automate resume parsing, evaluate skill relevancy, and provide instant candidate feedback alongside a real-time HR dashboard.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## ✨ Key Features
 
-### `npm start`
+- 📄 **Deterministic Resume Parsing:** High-precision text extraction from PDF resumes powered by Apache PDFBox (Zero third-party API latency or cost).
+- 💡 **Dynamic Skill Gap Analysis:** Instant feedback engine notifying candidates of specific missing skills relative to target Job Descriptions.
+- ⚡ **Real-Time HR Analytics:** Interactive leaderboard and candidate ranking dashboard that syncs live data seamlessly.
+- 🔒 **Enterprise Architecture:** Robust backend pipeline engineered with Spring Boot, ensuring data privacy and modular scalability.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tech Stack
 
-### `npm test`
+| Domain | Technologies Used |
+| :--- | :--- |
+| **Frontend** | React.js, JavaScript (ES6+), HTML5, CSS3, Axios |
+| **Backend** | Java 17, Spring Boot, Spring Data JPA, RESTful APIs |
+| **PDF Processing** | Apache PDFBox |
+| **Database** | MySQL |
+| **Build Tools** | Maven, npm |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📁 Project Architecture
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```text
+TalentFit-AI/
+├── ats-engine/          # Spring Boot Backend (Parsing & Scoring Service)
+│   ├── src/
+│   └── pom.xml
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Backend Setup (ats-engine)
+Configure your MySQL database credentials in src/main/resources/application.properties.
 
-### `npm run eject`
+Build and run the Spring Boot application:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+cd ats-engine
+./mvnw spring-boot:run
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Frontend Setup (talentfit-frontend)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Install the required Node dependencies:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+cd talentfit-frontend
+npm install
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Start the React development server:
+npm start
+└── talentfit-frontend/  # React.js Frontend (Candidate Portal & HR Dashboard)
+    ├── src/
+    └── package.json
