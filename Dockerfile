@@ -5,8 +5,8 @@ WORKDIR /app
 # Copy project files
 COPY . .
 
-# Build the JAR file using system Maven
-RUN mvn clean package -DskipTests
+# Compile without repackaging if main class fails
+RUN mvn clean package -DskipTests -Dstart-class=com.talentfit.AtsEngineApplication
 
 # Step 2: Use lightweight JRE to run the app
 FROM eclipse-temurin:17-jre
