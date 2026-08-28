@@ -1,16 +1,15 @@
-# Step 1: Use OpenJDK 17 base image
-FROM eclipse-temurin:17-jdk-alpine AS build
+# Step 1: Use Maven image to build the project
+FROM maven:3.8.5-openjdk-17 AS build
 WORKDIR /app
 
-# Copy all project files
+# Copy project files
 COPY . .
 
-# Grant execution permission to mvnw and build the jar
-RUN chmod +x mvnw
-RUN ./mvnw clean package -DskipTests
+# Build the JAR file using system Maven
+RUN mvn clean package -DskipTests
 
-# Step 2: Lightweight JRE Runtime
-FROM eclipse-temurin:17-jre-alpine
+# Step 2: Use lightweight JRE to run the app
+FROM eclipse-temurin:17-jre
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 
