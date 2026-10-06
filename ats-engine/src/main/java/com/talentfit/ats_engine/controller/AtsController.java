@@ -18,7 +18,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = {"https://talentfit-ai-1.onrender.com", "http://localhost:3000"})
 public class AtsController {
 
     @Autowired
