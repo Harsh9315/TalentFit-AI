@@ -15,7 +15,7 @@ function App() {
   const [fetchingApps, setFetchingApps] = useState(false);
   const [statusFilter, setStatusFilter] = useState('ALL');
 
-  const API_BASE = "http://localhost:8080/api";
+  const API_BASE = "https://talentfit-ai-ats.onrender.com/api";
 
   useEffect(() => {
     fetchJobs();
